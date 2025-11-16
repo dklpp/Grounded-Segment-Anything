@@ -5,8 +5,9 @@ import cv2
 CONFIG_PATH = "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
 CHECKPOINT_PATH = "./groundingdino_swint_ogc.pth"
 DEVICE = "cuda"
-IMAGE_PATH = "assets/demo7.jpg"
-TEXT_PROMPT = "Horse. Clouds. Grasses. Sky. Hill."
+input_image = "0023.jpg"
+IMAGE_PATH = f"assets/{input_image}" #"assets/demo7.jpg"
+TEXT_PROMPT = "Monitor . keyboard"
 BOX_TRESHOLD = 0.35
 TEXT_TRESHOLD = 0.25
 FP16_INFERENCE = True
@@ -28,4 +29,5 @@ boxes, logits, phrases = predict(
 )
 
 annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
-cv2.imwrite("annotated_image.jpg", annotated_frame)
+print(f"Device used: {next(model.parameters()).device}")
+cv2.imwrite(f"annotated_image_{input_image}.jpg", annotated_frame)
