@@ -1,0 +1,100 @@
+ 1995  cd ..
+ 1996  ls
+ 1997  cd pr
+ 1998  cd projects/
+ 1999  ls
+ 2000  rm -rf PyTorch-VAE/
+ 2001  export AM_I_DOCKER=False
+ 2002  export BUILD_WITH_CUDA=True
+ 2003  echo $CUDA_HOME
+ 2004  python -m venv .venv
+ 2005  source .venv/bin/activate
+ 2006  python -m pip install -e segment_anything
+ 2007  pip install --no-build-isolation -e GroundingDINO
+ 2008  deactivate
+ 2009  uv venv --python=python3.9
+ 2010  source .venv/bin/activate
+ 2011  uv python -m pip install -e segment_anything
+ 2012  python -m pip install -e segment_anything
+ 2013  deactivate
+ 2014  conda create -n torch118 python=3.10
+ 2015  conda activate torch118
+ 2016  which pip
+ 2017  conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+ 2018  conda clean --all --yes
+ 2019  rm -rf ~/miniconda/pkgs/cuda*
+ 2020  rm -rf ~/miniconda/pkgs/libcu*
+ 2021  conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+ 2022  python -m pip install -e segment_anything
+ 2023  pip install --no-build-isolation -e GroundingDINO
+ 2024  echo $CUDA_HOME
+ 2025  pip install --upgrade diffusers[torch]
+ 2026  pip install --no-build-isolation -e GroundingDINO
+ 2027  echo $CUDA_HOME
+ 2028  echo $BUILD_WITH_CUDA
+ 2029  echo $AM_I_DOCKER
+ 2030  conda config --show channels
+ 2031  conda remove -n torch118 --all -y
+ 2032  conda deactivate
+ 2033  conda remove -n torch118 --all -y
+ 2034  conda create -n gdino python=3.10 -c pytorch -c nvidia --override-channels
+ 2035  conda activate gdino
+ 2036  conda create -n torch118 python=3.10
+ 2037  conda create -n gdinosam python=3.10 -c pytorch -c nvidia --override-channels
+ 2038  conda create -n gdinosam python=3.10 -c conda-forge --override-channels
+ 2039  conda activate gdinosam
+ 2040  conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+ 2041  python
+ 2042  conda deactivate
+ 2043  conda remove -n gdinosam --all -y
+ 2044  conda create -n gdinosam python=3.10 -c conda-forge --override-channels
+ 2045  conda activate gdinosam
+ 2046  conda remove intel-openmp mkl mkl-service mkl_random mkl_fft -y
+ 2047  conda install pytorch torchvision torchaudio pytorch-cuda=11.8     -c pytorch -c nvidia --override-channels
+ 2048  conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+ 2049  conda install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+ 2050  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+ 2051  python
+ 2052  python -m pip install -e segment_anything
+ 2053  pip install --no-build-isolation -e GroundingDINO
+ 2054  pip uninstall -y torch torchvision torchaudio
+ 2055  pip install torch==1.13.1+cu118 torchvision==0.14.1+cu118     torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu118
+ 2056  pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+ 2057  import torch
+ 2058  print(torch.__version__)
+ 2059  print(torch.version.cuda)
+ 2060  print(torch.cuda.is_available())
+ 2061  python
+ 2062  pip install --no-build-isolation -e GroundingDINO
+ 2063  python -m pip install -e segment_anything
+ 2064  pip install --upgrade diffusers[torch]
+ 2065  git submodule update --init --recursive
+ 2066  cd grounded-sam-osx && bash install.sh
+ 2067  pip install opencv-python pycocotools matplotlib onnxruntime onnx ipykernel
+ 2068  cd Grounded-Segment-Anything
+ 2069  cd ..
+ 2070  wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
+ 2071  python grounding_dino_demo.py
+ 2072  pip uninstall -y torch torchvision torchaudio torchtext torchaudio torchdata
+ 2073  pip list | grep torch
+ 2074  pip uninstall -y torch
+ 2075  pip list | grep torch
+ 2076  pip uninstall -y torchvision
+ 2077  pip install torch==1.13.1+cu117     torchvision==0.14.1+cu117     torchaudio==0.13.1     --extra-index-url https://download.pytorch.org/whl/cu117
+ 2078  python
+ 2079  python grounding_dino_demo.py
+ 2080  pip install numpy==1.24.4
+ 2081  python grounding_dino_demo.py
+ 2082  pip install "transformers==4.26.1"
+ 2083  python grounding_dino_demo.py
+ 2084  pip install "supervision==0.6.0"
+ 2085  python grounding_dino_demo.py
+ 2086  pip install numpy==1.24.4
+ 2087  python grounding_dino_demo.py
+ 2088  git status
+ 2089  git add GroundingDINO/groundingdino/util/inference.py grounding_dino_demo.py 
+ 2090  git commit -m "fix: working on cu117 env"
+ 2091  git push origin
+ 2092  history 200
+ 2093  history 100
+ 2094  history 100 > history_100_conda_setup.txt
